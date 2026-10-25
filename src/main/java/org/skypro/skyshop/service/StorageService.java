@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import  java.util.Optional;
 
 @Service
 public class StorageService {
@@ -76,4 +77,8 @@ public class StorageService {
         result.addAll(articles.values());
         return result;
     }
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(products.get(id));
+    }
+
 }
